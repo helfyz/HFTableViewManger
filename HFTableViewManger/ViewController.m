@@ -20,7 +20,6 @@
     // Do any additional setup after loading the view, typically from a nib.
     [self hft_setupGroupedTableViw];
     
-    
     void (^configCellBlock)(UITableViewCell *cell,HFTableViewCellModel *cellModel) = ^(UITableViewCell *cell,HFTableViewCellModel *model) {
         cell.textLabel.text = model.cellData;
     };

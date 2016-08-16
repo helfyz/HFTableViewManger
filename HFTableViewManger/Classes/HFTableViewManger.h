@@ -26,7 +26,6 @@
 @property (nonatomic, assign) id<UITableViewDelegate> delegate;
 @property (nonatomic, assign) id<UITableViewDataSource> dataSource;
 
-
 @property(nonatomic, readonly, strong)  NSMutableArray *dataSourceModels; //需要展示的models
 @property(nonatomic, readonly) BOOL isMutableSection; //是多section模式的的
 

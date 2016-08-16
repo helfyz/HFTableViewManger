@@ -24,7 +24,6 @@
 @end
 
 @implementation HFTableViewManger {
-
     dispatch_semaphore_t _lock;
     dispatch_queue_t _queue;
     NSFileManager *_fileManger;
@@ -44,10 +43,10 @@
         _queue = dispatch_queue_create("HFTableViewManger", NULL);
         _fileManger = [NSFileManager defaultManager];
         _bundle = [NSBundle mainBundle];
-        //。。。单纯的想试试
-        //        [self setupData];
-        id (*typed_msgSend)(id, SEL) = (void *)objc_msgSend;
-        typed_msgSend(self, sel_registerName("setupData"));;
+       
+        [self setupData];
+//        id (*typed_msgSend)(id, SEL) = (void *)objc_msgSend;
+//        typed_msgSend(self, sel_registerName("setupData"));;
     }
     return self;
 }
@@ -387,7 +386,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    HFTableViewCellModel *cellModel = [self  cellModelForIndexPath:indexPath];
+    HFTableViewCellModel *cellModel = [self cellModelForIndexPath:indexPath];
     if([[cellModel class] isSubclassOfClass:[HFTableViewCellModel class]]) {
         if(cellModel.cellHeigth  > 0) {
             return cellModel.cellHeigth;
@@ -461,7 +460,6 @@
     HFTableViewSectionModel *findSectionModel = nil;
     if(self.isMutableSection && sectionKey.length > 0) {
         for (HFTableViewSectionModel *sectionModel in self.dataSourceModels) {
-            
             if([sectionModel.sectionKey isEqualToString:sectionKey]) {
                 findSectionModel = sectionModel;
                 break;
