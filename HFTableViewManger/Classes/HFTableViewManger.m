@@ -56,7 +56,8 @@
 
 - (void)setupViewWithStyle:(UITableViewStyle)style {
     _tableView = [[HFTableView alloc] initWithFrame:CGRectZero style:style];
-    
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
 }
 #pragma mark getter & setter
 //必须要设置一下，tableView应该是一开始在respondsToSelector 做了缓存。如果不设置，自身的转发机制将不能被触发
