@@ -1,5 +1,7 @@
 # HFTableViewManger
 
- 简化tablView的使用
+ 简化tablView的使用,具体使用看demo
  
-      pod 'HFTableViewManger'
+     pod 'HFTableViewManger' :git => 'git@github.com:helfyz/HFTableViewManger.git' :tag=> '0.0.2'
+     
+     
