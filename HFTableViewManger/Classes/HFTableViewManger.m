@@ -8,7 +8,7 @@
 
 #import "HFTableViewManger.h"
 #import <UIKit/UIKit.h>
-#import <UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h>
+#import "UITableView+FDTemplateLayoutCell.h"
 #import <objc/message.h>
 @implementation HFTableView
 - (void)setDataSource:(id<UITableViewDataSource>)dataSource {
